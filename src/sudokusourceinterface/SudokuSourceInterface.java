@@ -389,7 +389,7 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     break;
 
                 case 4:
-
+                    //Inferno sudoku 
                     int[][] sudokuFour = {{8, 7, 4, 3, 2, 9, 6, 1, 5},
                     {1, 6, 3, 5, 7, 8, 2, 9, 4},
                     {9, 5, 2, 1, 4, 6, 7, 3, 8},
