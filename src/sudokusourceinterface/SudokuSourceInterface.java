@@ -592,7 +592,6 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
 
 
 
-Hello world
         }
     }
 
