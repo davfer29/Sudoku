@@ -590,6 +590,9 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
             howTopPlay.setVisible(true);
             howTopPlay.setResizable(false);
 
+
+
+Hello world
         }
     }
 
