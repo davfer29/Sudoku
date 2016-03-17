@@ -203,8 +203,6 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
         JLabel labelGame;
         JButton buttonNew, buttonPrevGame, buttonSave, buttonOut, buttonBack;
         JPanel whitePanel;
-        
-       
 
         private static final long serialVersionUID = 1L;
 
@@ -254,11 +252,8 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
 
                 }
             }
-            
-            
-            
-            ///////////////////Logic starts here//////////////////////////////////
 
+            ///////////////////Logic starts here//////////////////////////////////
             switch (sudokuGame) {
 
                 case 1:
@@ -274,6 +269,15 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                         {4, 6, 1, 2, 3, 8, 9, 7, 5},
                         {3, 5, 9, 7, 1, 6, 4, 8, 2},
                         {2, 7, 8, 4, 9, 5, 1, 3, 6}};
+
+                    for (int r = 0; r <= 9; r++) {
+
+                        for (int c = 0; c <= 9; c++) {
+
+                            subPanels[r][c].setText(String.valueOf(sudokuOne[0][0]));
+
+                        }
+                    }
 
                     /*show this {6,9,2,1}
                        {4,2,7}
@@ -299,6 +303,13 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     {8, 2, 6, 1, 3, 4, 7, 9, 5},
                     {4, 7, 1, 8, 9, 5, 6, 3, 2}};
 
+                    for (int r = 0; r <= 9; r++) {
+
+                        for (int c = 0; c <= 9; c++) {
+
+                            subPanels[r][c].setText(String.valueOf(sudokuTwo[0][0]));
+                        }
+                    }
 
                     /* show this {2,5,7,9,3}
                         {8,5}
@@ -313,7 +324,7 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     break;
                 case 3:
 
-                    //sudoku 3
+                    //sudoku 
                     int[][] sudokuThree = {{2, 1, 5, 4, 7, 8, 3, 6, 9},
                     {9, 3, 4, 2, 6, 1, 5, 7, 8},
                     {6, 7, 8, 9, 3, 5, 2, 1, 4},
@@ -324,6 +335,14 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     {8, 4, 7, 3, 5, 9, 6, 2, 1},
                     {5, 2, 6, 1, 4, 7, 9, 8, 3}};
 
+                    for (int r = 0; r <= 9; r++) {
+
+                        for (int c = 0; c <= 9; c++) {
+
+                            subPanels[r][c].setText(String.valueOf(sudokuThree[0][0]));
+
+                        }
+                    }
                     /*show this {2,1,4,8,6}
                        {9,6,8}
                        {7,8,9}
@@ -337,7 +356,7 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     break;
 
                 case 4:
-                    //Me cago en el scrum master
+
                     int[][] sudokuFour = {{8, 7, 4, 3, 2, 9, 6, 1, 5},
                     {1, 6, 3, 5, 7, 8, 2, 9, 4},
                     {9, 5, 2, 1, 4, 6, 7, 3, 8},
@@ -347,6 +366,15 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     {6, 3, 7, 4, 9, 5, 8, 2, 1},
                     {2, 8, 9, 6, 3, 1, 4, 5, 7},
                     {4, 1, 5, 7, 8, 2, 9, 6, 3}};
+
+                    for (int r = 0; r <= 9; r++) {
+
+                        for (int c = 0; c <= 9; c++) {
+
+                            subPanels[r][c].setText(String.valueOf(sudokuFour[0][0]));
+
+                        }
+                    }
 
                     /*show this {}
                         {3,6}
@@ -363,9 +391,6 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
             }
 
             ///////////////////Logic Ends here///////////////////////////////////////
-
-            
-
             final JPanel buttonPanel = new JPanel();
             buttonPanel.setLayout(null);
             buttonPanel.setBackground(Color.black);
@@ -425,7 +450,6 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
             buttonPanel.setLayout(null);
             container.add(buttonPanel);
 
-           
         }
 
         @Override
