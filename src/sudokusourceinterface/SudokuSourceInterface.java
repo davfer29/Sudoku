@@ -11,16 +11,15 @@ import java.awt.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-/**
- *
- * @author David
+/*
+
+autor: Ya deberias saberlo...
  */
 public class SudokuSourceInterface extends JFrame implements ActionListener {
 
     //Declara las variables que seran los componentes 
-    JLabel labelTitle;
+    JLabel labelTitle, labelCreditTitle;
     JButton buttonNew, buttonSave, buttonOut, buttonCredits, buttonHowToPlay;
-    JLabel labelCreditTitle;
 
     /////////////menubar/////////////
     JMenuBar menubar;
@@ -30,6 +29,9 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
     ////////////credits//////////////
     JButton btnBackHome;
     SudokuCredits creditsWindow;
+
+    ///////////Logic///////////////
+    int sudokuGame = (int) (Math.random() * (15 - 11) + 1);
 
     public SudokuSourceInterface() {
 
@@ -201,6 +203,8 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
         JLabel labelGame;
         JButton buttonNew, buttonPrevGame, buttonSave, buttonOut, buttonBack;
         JPanel whitePanel;
+        
+       
 
         private static final long serialVersionUID = 1L;
 
@@ -250,83 +254,26 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
 
                 }
             }
-
-            final JPanel buttonPanel = new JPanel();
-            buttonPanel.setLayout(null);
-            buttonPanel.setBackground(Color.black);
-            buttonPanel.setBounds(0, 0, 200, 500);
-
-            buttonNew = new JButton("Nuevo juego");
-            buttonNew.addActionListener(this);
-            buttonNew.setBounds(15, 280, 150, 25);//Ubicacion y tamaño del boton
-            buttonNew.setBackground(Color.black);//color del fondo del boton
-            buttonNew.setForeground(Color.white);//color de la fuente del boton
-            buttonNew.setFont(new Font("Helvetica", Font.PLAIN, 15));//fuente y tamaño
-            buttonPanel.add(buttonNew);
-
-            labelGame = new JLabel("Juego");
-            labelGame.setFont(new Font("HACKED", Font.BOLD, 25));
-            labelGame.setForeground(Color.white);
-            labelGame.setBounds(25, 50, 100, 25);//Declara la ubicacion del label
-            buttonPanel.add(labelGame);
-
-            buttonSave = new JButton("Cargar Juego");
-            buttonSave.addActionListener(this);
-            buttonSave.setBounds(15, 210, 150, 25);
-            buttonSave.setBackground(Color.black);
-            buttonSave.setForeground(Color.white);
-            buttonSave.setFont(new Font("Helvetica", Font.PLAIN, 15));
-            buttonPanel.add(buttonSave);
-
-            buttonPrevGame = new JButton("Guardar juego");
-            buttonPrevGame.addActionListener(this);
-            buttonPrevGame.setBounds(15, 135, 150, 25);
-            buttonPrevGame.setBackground(Color.black);
-            buttonPrevGame.setForeground(Color.white);
-            buttonPrevGame.setFont(new Font("Helvetica", Font.PLAIN, 15));
-            buttonPanel.add(buttonPrevGame);
-
-            buttonOut = new JButton("Salir");
-            buttonOut.addActionListener(this);
-            buttonOut.setBounds(15, 420, 150, 25);
-            buttonOut.setBackground(Color.black);
-            buttonOut.setForeground(Color.white);
-            buttonOut.setFont(new Font("Helvetica", Font.PLAIN, 15));
-            buttonPanel.add(buttonOut);
-
-            buttonBack = new JButton("Atras");
-            buttonBack.addActionListener(this);
-            buttonBack.setBounds(15, 350, 150, 25);
-            buttonBack.setBackground(Color.black);
-            buttonBack.setForeground(Color.white);
-            buttonBack.setFont(new Font("Helvetica", Font.PLAIN, 15));
-            buttonPanel.add(buttonBack);
-
-            Border LineBorder = new LineBorder(Color.lightGray);
-            buttonPanel.setBorder(LineBorder);
-            BoxLayout horizontal = new BoxLayout(buttonPanel, BoxLayout.X_AXIS);
-            buttonPanel.setLayout(horizontal);
-            FlowLayout flow = new FlowLayout();
-            buttonPanel.setLayout(null);
-            container.add(buttonPanel);
-
-            ///////////////////Logic starts here///////////////////////////////////
-            int sudokuGame = (int) (Math.random() * (15 - 11) + 1);
+            
+            
+            
+            ///////////////////Logic starts here//////////////////////////////////
 
             switch (sudokuGame) {
 
                 case 1:
 
                     //sudoku 1
-                    int[][] sudokuOne = {{6, 9, 3, 8, 7, 4, 2, 5, 1},
-                    {5, 8, 4, 1, 6, 2, 7, 9, 3},
-                    {7, 1, 2, 9, 5, 3, 8, 6, 4},
-                    {1, 4, 5, 3, 8, 7, 6, 2, 9},
-                    {8, 2, 6, 5, 4, 9, 3, 1, 7},
-                    {9, 3, 7, 6, 2, 1, 5, 4, 8},
-                    {4, 6, 1, 2, 3, 8, 9, 7, 5},
-                    {3, 5, 9, 7, 1, 6, 4, 8, 2},
-                    {2, 7, 8, 4, 9, 5, 1, 3, 6}};
+                    int[][] sudokuOne = {
+                        {6, 9, 3, 8, 7, 4, 2, 5, 1},
+                        {5, 8, 4, 1, 6, 2, 7, 9, 3},
+                        {7, 1, 2, 9, 5, 3, 8, 6, 4},
+                        {1, 4, 5, 3, 8, 7, 6, 2, 9},
+                        {8, 2, 6, 5, 4, 9, 3, 1, 7},
+                        {9, 3, 7, 6, 2, 1, 5, 4, 8},
+                        {4, 6, 1, 2, 3, 8, 9, 7, 5},
+                        {3, 5, 9, 7, 1, 6, 4, 8, 2},
+                        {2, 7, 8, 4, 9, 5, 1, 3, 6}};
 
                     /*show this {6,9,2,1}
                        {4,2,7}
@@ -351,6 +298,7 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                     {9, 5, 3, 7, 2, 6, 1, 4, 8},
                     {8, 2, 6, 1, 3, 4, 7, 9, 5},
                     {4, 7, 1, 8, 9, 5, 6, 3, 2}};
+
 
                     /* show this {2,5,7,9,3}
                         {8,5}
@@ -415,6 +363,69 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
             }
 
             ///////////////////Logic Ends here///////////////////////////////////////
+
+            
+
+            final JPanel buttonPanel = new JPanel();
+            buttonPanel.setLayout(null);
+            buttonPanel.setBackground(Color.black);
+            buttonPanel.setBounds(0, 0, 200, 500);
+
+            buttonNew = new JButton("Nuevo juego");
+            buttonNew.addActionListener(this);
+            buttonNew.setBounds(15, 280, 150, 25);//Ubicacion y tamaño del boton
+            buttonNew.setBackground(Color.black);//color del fondo del boton
+            buttonNew.setForeground(Color.white);//color de la fuente del boton
+            buttonNew.setFont(new Font("Helvetica", Font.PLAIN, 15));//fuente y tamaño
+            buttonPanel.add(buttonNew);
+
+            labelGame = new JLabel("Juego");
+            labelGame.setFont(new Font("HACKED", Font.BOLD, 25));
+            labelGame.setForeground(Color.white);
+            labelGame.setBounds(25, 50, 100, 25);//Declara la ubicacion del label
+            buttonPanel.add(labelGame);
+
+            buttonSave = new JButton("Cargar Juego");
+            buttonSave.addActionListener(this);
+            buttonSave.setBounds(15, 210, 150, 25);
+            buttonSave.setBackground(Color.black);
+            buttonSave.setForeground(Color.white);
+            buttonSave.setFont(new Font("Helvetica", Font.PLAIN, 15));
+            buttonPanel.add(buttonSave);
+
+            buttonPrevGame = new JButton("Guardar juego");
+            buttonPrevGame.addActionListener(this);
+            buttonPrevGame.setBounds(15, 135, 150, 25);
+            buttonPrevGame.setBackground(Color.black);
+            buttonPrevGame.setForeground(Color.white);
+            buttonPrevGame.setFont(new Font("Helvetica", Font.PLAIN, 15));
+            buttonPanel.add(buttonPrevGame);
+
+            buttonOut = new JButton("Salir");
+            buttonOut.addActionListener(this);
+            buttonOut.setBounds(15, 420, 150, 25);
+            buttonOut.setBackground(Color.black);
+            buttonOut.setForeground(Color.white);
+            buttonOut.setFont(new Font("Helvetica", Font.PLAIN, 15));
+            buttonPanel.add(buttonOut);
+
+            buttonBack = new JButton("Atras");
+            buttonBack.addActionListener(this);
+            buttonBack.setBounds(15, 350, 150, 25);
+            buttonBack.setBackground(Color.black);
+            buttonBack.setForeground(Color.white);
+            buttonBack.setFont(new Font("Helvetica", Font.PLAIN, 15));
+            buttonPanel.add(buttonBack);
+
+            Border LineBorder = new LineBorder(Color.lightGray);
+            buttonPanel.setBorder(LineBorder);
+            BoxLayout horizontal = new BoxLayout(buttonPanel, BoxLayout.X_AXIS);
+            buttonPanel.setLayout(horizontal);
+            FlowLayout flow = new FlowLayout();
+            buttonPanel.setLayout(null);
+            container.add(buttonPanel);
+
+           
         }
 
         @Override
@@ -441,6 +452,7 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
                 System.exit(0);
 
             }
+
         }
     }
 
@@ -589,8 +601,6 @@ public class SudokuSourceInterface extends JFrame implements ActionListener {
             //Permite quela ventana sea visible y que no se le pueda cambiar el tamaño 
             howTopPlay.setVisible(true);
             howTopPlay.setResizable(false);
-
-
 
         }
     }
